@@ -4,8 +4,6 @@ const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
 
-  console.log(year);
-
   return (
     <footer className={styles.footer}>
       {year} <span>&copy;</span> Lauyrynas Rup.{' '}

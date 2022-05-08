@@ -13,6 +13,7 @@ body {
   font-family: 'DCC', sans-serif;
   font-size: 62.5%;
   color: #232323;
+  letter-spacing: 0.15rem;
 }
 
 a {
@@ -22,4 +23,12 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+button:focus,
+a:focus,
+textarea:focus,
+input:focus {
+  outline-width: 0.25rem;
+  outline-color: grey;
 }
