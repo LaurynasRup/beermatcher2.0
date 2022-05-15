@@ -1,5 +1,8 @@
 import { useEffect } from 'react';
 import { useBeerContext } from '../Context/beersContext';
+import styles from '../styles/Carousel.module.css';
+import { truncateText } from '../functions/truncate';
+import BeerCard from './BeerCard';
 
 const Carousel = () => {
   // Context
@@ -9,11 +12,15 @@ const Carousel = () => {
     console.log(items);
   }, [items]);
   return (
-    <>
+    <section className={styles.carousel}>
       {items.map(item => (
-        <p style={{ fontSize: '2rem' }}>{item.name}</p>
+        <BeerCard
+          name={item.name}
+          image={item.image_url}
+          description={item.description}
+        />
       ))}
-    </>
+    </section>
   );
 };
 

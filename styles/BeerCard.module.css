@@ -1,0 +1,36 @@
+.card {
+  cursor: pointer;
+  padding: 2.5rem;
+  border: solid 0.1rem #e5e1e1;
+  border-radius: 1.5rem;
+  flex-basis: 26rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0.35rem 1.5rem 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(0.1rem);
+
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0.7rem 3rem 0 rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(0.25rem);
+}
+
+.cardTop {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.cardImageCont img {
+  max-height: 20rem;
+}
+.cardTop p {
+  color: #ddd;
+  font-size: 3rem;
+}
+
+.cardDesc {
+  font-size: 2rem;
+}
