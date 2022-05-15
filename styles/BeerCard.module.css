@@ -3,7 +3,7 @@
   padding: 2.5rem;
   border: solid 0.1rem #e5e1e1;
   border-radius: 1.5rem;
-  flex-basis: 26rem;
+  flex-basis: 28rem;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 0.35rem 1.5rem 0 rgba(0, 0, 0, 0.37);
   backdrop-filter: blur(0.1rem);
@@ -23,14 +23,20 @@
   margin-bottom: 1.5rem;
 }
 
+.cardImageCont {
+  flex-basis: 5rem;
+  flex-shrink: 1;
+}
+
 .cardImageCont img {
   max-height: 20rem;
 }
 .cardTop p {
   color: #ddd;
   font-size: 3rem;
+  flex-grow: 1;
 }
 
 .cardDesc {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
