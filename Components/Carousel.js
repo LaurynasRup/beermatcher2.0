@@ -1,27 +1,56 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useBeerContext } from '../Context/beersContext';
 import styles from '../styles/Carousel.module.css';
-import { truncateText } from '../functions/truncate';
 import BeerCard from './BeerCard';
 import { usePagination } from '../hooks/UsePagination';
+
+const PER_PAGE = 4;
 
 const Carousel = () => {
   // Context
   const { items, updateItems } = useBeerContext();
+  const [displayButtons, setDisplayButtons] = useState({
+    prev: false,
+    next: false,
+  });
 
-  const { displayArray, setInitialProducts } = usePagination(items);
+  const { currentItems, setItemsArray, currentPage, nextPage, prevPage } =
+    usePagination(items, PER_PAGE);
+
+  const displayPagButtons = () => {
+    // Prev button
+    if (currentPage === 1) {
+      setDisplayButtons({ ...displayButtons, prev: false });
+    } else {
+      setDisplayButtons({ ...displayButtons, prev: true });
+    }
+
+    // Next Button
+    if (items.length > 0) {
+      if (currentPage < items.length / PER_PAGE) {
+        setDisplayButtons({ ...displayButtons, next: true });
+      } else {
+        setDisplayButtons({ ...displayButtons, next: false });
+      }
+    }
+  };
+
   useEffect(() => {
-    const displayBeers = setInitialProducts(items);
-  }, [items]);
+    setItemsArray();
+    displayPagButtons();
+  }, [items, currentPage]);
 
   return (
     <section className={styles.carousel}>
-      <button
-        type="button"
-        title="Previous"
-        className={styles.chevronPrev}
-      ></button>
-      {displayArray.map((item, idx) => (
+      {displayButtons.prev && (
+        <button
+          type="button"
+          title="Previous"
+          className={styles.chevronPrev}
+          onClick={prevPage}
+        ></button>
+      )}
+      {currentItems.map((item, idx) => (
         <BeerCard
           key={idx}
           name={item.name}
@@ -29,11 +58,14 @@ const Carousel = () => {
           description={item.description}
         />
       ))}
-      <button
-        type="button"
-        title="Next"
-        className={styles.chevronNext}
-      ></button>
+      {displayButtons.next && (
+        <button
+          type="button"
+          title="Next"
+          className={styles.chevronNext}
+          onClick={nextPage}
+        ></button>
+      )}
     </section>
   );
 };

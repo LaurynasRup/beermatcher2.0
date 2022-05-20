@@ -5,6 +5,9 @@
   justify-content: space-around;
   align-items: center;
   gap: 1rem;
+  padding-left: 7rem;
+  padding-right: 7rem;
+  position: relative;
 }
 
 .chevronPrev {
@@ -21,6 +24,10 @@
   background-position: 55% 50%;
   transform: rotate(180deg);
   transition: all 0.25s ease;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .chevronPrev:hover {
@@ -40,6 +47,10 @@
   background-repeat: no-repeat;
   background-position: 55% 50%;
   transition: all 0.25s ease;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
 }
 
 .chevronNext:hover {
