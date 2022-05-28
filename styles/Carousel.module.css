@@ -4,10 +4,13 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   padding-left: 7rem;
   padding-right: 7rem;
   position: relative;
+}
+.carouselNarrow {
+  justify-content: center;
 }
 
 .chevronPrev {

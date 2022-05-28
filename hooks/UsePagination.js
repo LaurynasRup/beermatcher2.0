@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export const usePagination = (array, perPage) => {
   // State to store current items
@@ -22,5 +22,12 @@ export const usePagination = (array, perPage) => {
     setCurrentPage(currentPage - 1);
   };
 
-  return { currentItems, setItemsArray, currentPage, nextPage, prevPage };
+  return {
+    currentItems,
+    setItemsArray,
+    currentPage,
+    nextPage,
+    prevPage,
+    setCurrentPage,
+  };
 };

@@ -1,0 +1,115 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+  backdrop-filter: blur(0.75rem);
+  animation: appear 0.15s ease-in forwards;
+}
+
+@keyframes appear {
+  from {
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0.75rem);
+  }
+}
+
+.modalInner {
+  max-width: 67.5rem;
+  border-radius: 1.5rem;
+  padding: 6rem;
+  background: linear-gradient(#b9c5c8 10%, #0a5c73);
+  box-shadow: 0rem 0.75rem 2rem 1.05rem rgba(0, 0, 0, 0.35);
+  animation: shadowAppear 0.25s ease-in forwards;
+}
+
+@keyframes shadowAppear {
+  from {
+    box-shadow: 0rem 0.75rem 2rem 0rem rgba(0, 0, 0, 0.15);
+  }
+  to {
+    box-shadow: 0rem 0.75rem 2rem 1.05rem rgba(0, 0, 0, 0.35);
+  }
+}
+
+.modalTop {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;
+}
+
+.modalTop img {
+  height: 100%;
+  max-height: 30rem;
+  filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5));
+}
+
+.modalTopText h2 {
+  font-size: 5.8rem;
+  margin-bottom: 2rem;
+}
+.modalTopText h3 {
+  font-size: 4.2rem;
+  /* margin-bottom: 2rem; */
+}
+
+.description {
+  margin-top: 3.5rem;
+  font-size: 2.4rem;
+  max-height: 15rem;
+  overflow: auto;
+  scrollbar-width: none;
+}
+
+.description::-webkit-scrollbar {
+  display: none;
+}
+
+.pairing {
+  margin-top: 3.5rem;
+  color: #ddd;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  width: 100%;
+}
+
+.pairing p {
+  font-size: 2.2rem;
+}
+
+.pairing ol {
+  margin-top: 1rem;
+  list-style-position: inside;
+}
+
+.pairing li {
+  line-height: 1.15;
+}
+
+.pairing button {
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  background-image: url('/heart.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  filter: invert(90%);
+  width: 7rem;
+  height: 5rem;
+  margin-bottom: 0.5rem;
+  transition: filter 0.3s ease;
+}
+
+.pairing button:hover {
+  filter: invert(0%);
+}
