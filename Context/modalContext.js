@@ -2,7 +2,7 @@ import { useState, createContext, useContext } from 'react';
 
 const ModalContext = createContext();
 
-export function AppWrapperModal({ children }) {
+export const AppWrapperModal = ({ children }) => {
   const [modal, setModal] = useState({
     display: false,
     item: null,
@@ -21,8 +21,8 @@ export function AppWrapperModal({ children }) {
       {children}
     </ModalContext.Provider>
   );
-}
+};
 
-export function useModalContext() {
+export const useModalContext = () => {
   return useContext(ModalContext);
-}
+};

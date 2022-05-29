@@ -33,7 +33,12 @@
   padding-top: 1.5rem;
 }
 
-.nav__likes {
+.nav__likesCont {
+  border: solid 1px red;
+  position: relative;
+}
+
+.nav__likesBtn {
   cursor: pointer;
   appearance: none;
   border: none;
@@ -44,6 +49,32 @@
   filter: brightness(0.5);
   width: 7.5rem;
   height: 6.5rem;
+}
+
+.nav__likesList {
+  opacity: 0;
+  visibility: hidden;
+  font-size: 2.4rem;
+  list-style: none;
+  border: solid 1px green;
+  position: absolute;
+  right: 0;
+  padding-top: 1rem;
+}
+
+.nav__likesList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.75rem;
+}
+.nav__likesList img {
+  max-height: 6rem;
+}
+.nav__likesList:hover,
+.nav__likesBtn:hover + .nav__likesList {
+  opacity: 1;
+  visibility: visible;
 }
 
 @media (max-width: 568px) {

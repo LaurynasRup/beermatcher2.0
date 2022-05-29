@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from 'react';
 
 const BeerContext = createContext();
 
-export function AppWrapper({ children }) {
+export const AppWrapper = ({ children }) => {
   const [items, setItems] = useState([]);
 
   const updateItems = arr => {
@@ -14,8 +14,8 @@ export function AppWrapper({ children }) {
       {children}
     </BeerContext.Provider>
   );
-}
+};
 
-export function useBeerContext() {
+export const useBeerContext = () => {
   return useContext(BeerContext);
-}
+};
