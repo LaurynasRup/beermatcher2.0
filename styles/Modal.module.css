@@ -6,6 +6,7 @@
   place-items: center;
   backdrop-filter: blur(0.75rem);
   animation: appear 0.15s ease-in forwards;
+  z-index: 20;
 }
 
 @keyframes appear {
