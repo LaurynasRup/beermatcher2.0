@@ -27,7 +27,7 @@ const BeerCard = ({ name, image, description, id }) => {
         </div>
         <p>{name}</p>
       </div>
-      <p className={styles.cardDesc}>{truncateText(description, 100)} ...</p>
+      <p className={styles.cardDesc}>{truncateText(description, 100)}</p>
     </article>
   );
 };

@@ -39,7 +39,7 @@
 }
 
 .search__input:disabled {
-  background-color: #ddd;
+  background-color: #dddddd80;
 }
 
 .search__inputControls [type='submit'],

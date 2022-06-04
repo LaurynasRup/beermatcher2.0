@@ -12,7 +12,6 @@ export default function Home() {
   const { updateLikedBeers } = useLikedBeerContext();
 
   useEffect(() => {
-    console.log('app start');
     const retrieved = localStorage.getItem('likedBeers');
 
     if (retrieved) {
