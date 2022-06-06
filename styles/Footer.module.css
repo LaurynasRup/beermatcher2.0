@@ -5,6 +5,7 @@
   font-size: 3.2rem;
   letter-spacing: 0.1rem;
   color: #ddd;
+  text-align: center;
 }
 
 .footer span:nth-of-type(2) {
@@ -19,4 +20,16 @@
 
 .footer a:hover {
   color: #232323;
+}
+
+@media (max-width: 960px) {
+  .footer {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    font-size: 2.2rem;
+  }
 }

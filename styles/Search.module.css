@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  margin-top: 2rem;
 }
 
 .search__heading {
@@ -42,6 +44,13 @@
   background-color: #dddddd80;
 }
 
+.search__inputControls {
+  white-space: pre;
+  display: flex;
+  align-items: stretch;
+  height: 4.6rem;
+}
+
 .search__inputControls [type='submit'],
 .search__inputControls select {
   border: 0;
@@ -59,6 +68,7 @@
   color: #ddd;
   background: #232323;
   padding-top: 0.5rem;
+  height: 100%;
 }
 
 .search__input:focus,
@@ -72,4 +82,69 @@
   border-top-right-radius: 4rem;
   border-bottom-right-radius: 4rem;
   appearance: none;
+}
+
+@media (max-width: 960px) {
+  .search__heading {
+    font-size: 4.8rem;
+  }
+  .search__inputControls {
+    height: 3.8rem;
+  }
+
+  .search__inputControls [type='submit'],
+  .search__inputControls select {
+    display: inline-block;
+    font-size: 2rem;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+
+  .search__input {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .search__heading {
+    font-size: 3.2rem;
+  }
+
+  .search__inputControls {
+    height: 3rem;
+  }
+
+  .search__inputControls [type='submit'],
+  .search__inputControls select {
+    font-size: 1.8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .search__input {
+    font-size: 2rem;
+    letter-spacing: 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .search__heading {
+    font-size: 2.8rem;
+  }
+  .search__inputControls {
+    height: 3.35rem;
+  }
+
+  .search__inputControls [type='submit'],
+  .search__inputControls select {
+    display: inline-block;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .search__input {
+    font-size: 2rem;
+    letter-spacing: 0;
+    padding-bottom: 0.35rem;
+  }
 }
