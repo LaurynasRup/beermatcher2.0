@@ -2,7 +2,7 @@
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  font-size: 3.2rem;
+  font-size: clamp(1.8rem, 2.5vw, 3rem) ;
   letter-spacing: 0.1rem;
   color: #ddd;
   text-align: center;
@@ -20,16 +20,4 @@
 
 .footer a:hover {
   color: #232323;
-}
-
-@media (max-width: 960px) {
-  .footer {
-    font-size: 2.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer {
-    font-size: 2.2rem;
-  }
 }

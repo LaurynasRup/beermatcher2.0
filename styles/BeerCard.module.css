@@ -10,8 +10,8 @@
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 0.35rem 1.5rem 0 rgba(0, 0, 0, 0.37);
   backdrop-filter: blur(0.1rem);
-
   transition: all 0.25s ease;
+  text-align: left;
 }
 
 .card:hover {
