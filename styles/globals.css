@@ -14,6 +14,11 @@ body {
   font-size: 62.5%;
   color: #232323;
   letter-spacing: 0.15rem;
+
+  --top-gutter: 5.5rem;
+  --side-gutter: 2rem;
+
+  --nav-height: 13.5rem;
 }
 
 a {

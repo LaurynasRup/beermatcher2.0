@@ -23,6 +23,7 @@ const Search = () => {
   // Functions
   const formSubmitHandler = async (e, selectValue) => {
     e.preventDefault();
+    if (input === '') return;
 
     let url;
     const baseUrl = 'https://api.punkapi.com/v2/beers';

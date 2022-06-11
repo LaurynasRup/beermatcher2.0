@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import styles from '../styles/Nav.module.css';
 import { useLikedBeerContext } from '../Context/likedBeersContext';
 import { useModalContext } from '../Context/modalContext';
@@ -7,6 +7,13 @@ import { truncateText } from '../functions/truncate.js';
 const Nav = () => {
   const { likedBeers, updateLikedBeers } = useLikedBeerContext();
   const { toggleModal } = useModalContext();
+  const navRef = useRef();
+
+  // Calculate nav ref
+  useEffect(() => {
+    const navheight = navRef.current.offsetHeight;
+    document.body.style.setProperty('--nav-height', `${navheight / 10}rem`);
+  }, []);
 
   const handleLikedBeer = e => {
     const likedBeerId = e.target.closest('li').dataset.itemId;
@@ -25,7 +32,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.nav} ref={navRef}>
       <div className={styles.nav__logo}>
         <span className={styles.nav__logoText}>Brewdog</span>
       </div>

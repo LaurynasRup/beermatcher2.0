@@ -121,6 +121,19 @@
   visibility: visible;
 }
 
+.nav__likeRemove {
+  cursor: pointer;
+  position: absolute;
+  top: 1.5rem;
+  right: 2.4rem;
+  appearance: none;
+  background: transparent;
+  border: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg enable-background='new 0 0 300.003 300.003' version='1.1' viewBox='0 0 300 300' xml:space='preserve' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m150 0c-82.841 0-150 67.159-150 150 0 82.838 67.157 150 150 150s150-67.165 150-150c0-82.841-67.163-150-150-150zm56.584 207.17c-5.989 5.984-15.691 5.984-21.675 0l-34.132-34.132-35.686 35.686c-5.986 5.984-15.689 5.984-21.672 0-5.989-5.991-5.989-15.691 0-21.68l35.683-35.683-33.224-33.222c-5.984-5.991-5.984-15.691 0-21.678 5.986-5.986 15.691-5.986 21.678 0l33.222 33.222 31.671-31.673c5.986-5.984 15.694-5.986 21.675 0 5.989 5.991 5.989 15.697 0 21.678l-31.668 31.671 34.13 34.132c5.984 5.983 5.987 15.691-2e-3 21.679z' fill='%23691d1d'/%3E%3C/svg%3E%0A");
+}
+
 @media (max-width: 768px) {
   .nav__logo {
     font-size: 3.2rem;
@@ -143,15 +156,37 @@
   }
 }
 
-.nav__likeRemove {
-  cursor: pointer;
-  position: absolute;
-  top: 1.5rem;
-  right: 2.4rem;
-  appearance: none;
-  background: transparent;
-  border: none;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg enable-background='new 0 0 300.003 300.003' version='1.1' viewBox='0 0 300 300' xml:space='preserve' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m150 0c-82.841 0-150 67.159-150 150 0 82.838 67.157 150 150 150s150-67.165 150-150c0-82.841-67.163-150-150-150zm56.584 207.17c-5.989 5.984-15.691 5.984-21.675 0l-34.132-34.132-35.686 35.686c-5.986 5.984-15.689 5.984-21.672 0-5.989-5.991-5.989-15.691 0-21.68l35.683-35.683-33.224-33.222c-5.984-5.991-5.984-15.691 0-21.678 5.986-5.986 15.691-5.986 21.678 0l33.222 33.222 31.671-31.673c5.986-5.984 15.694-5.986 21.675 0 5.989 5.991 5.989 15.697 0 21.678l-31.668 31.671 34.13 34.132c5.984 5.983 5.987 15.691-2e-3 21.679z' fill='%23691d1d'/%3E%3C/svg%3E%0A");
+@media (max-width: 480px) {
+  .nav__likesList {
+    width: 100vw;
+    transform: translateY(0rem);
+    top: 0;
+    left: 0;
+    padding-top: calc(var(--nav-height) + var(--top-gutter));
+    background-color: rgba(221, 221, 221, 1);
+    border-radius: 0;
+    max-height: 100vh;
+    height: 100vh;
+    overflow: auto;
+    z-index: 10;
+  }
+
+  .nav__likesList li {
+    max-width: none;
+  }
+  .nav__likesList li:first-of-type {
+    max-width: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .nav__likesList li:last-of-type {
+    max-width: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .nav__likesCont {
+    position: unset;
+  }
 }

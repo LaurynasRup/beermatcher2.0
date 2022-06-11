@@ -5,10 +5,9 @@
   background-size: cover;
   width: 100%;
   height: 100vh;
-  padding-top: 5.5rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 2rem;
+  padding-top: var(--top-gutter);
+  padding-inline: var(--side-gutter);
+  padding-bottom: var(--side-gutter);
   display: flex;
   flex-direction: column;
   align-items: center;
