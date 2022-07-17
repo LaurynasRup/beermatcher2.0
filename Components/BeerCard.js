@@ -2,6 +2,13 @@ import { truncateText } from '../functions/truncate';
 import styles from '../styles/BeerCard.module.css';
 import { useModalContext } from '../Context/modalContext';
 import { useBeerContext } from '../Context/beersContext';
+import { SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 const BeerCard = ({ name, image, description, id }) => {
   const { modal, toggleModal } = useModalContext();

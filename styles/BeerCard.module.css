@@ -4,11 +4,8 @@
   padding: 2.5rem;
   border: solid 0.1rem #e5e1e1;
   border-radius: 1.5rem;
-  flex-basis: 28rem;
-  flex-grow: 0;
-  align-self: stretch;
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0.35rem 1.5rem 0 rgba(0, 0, 0, 0.37);
+  box-shadow: 0 0.35rem 0.5rem 0 rgba(0, 0, 0, 0.37);
   backdrop-filter: blur(0.1rem);
   transition: all 0.25s ease;
   text-align: left;
@@ -21,6 +18,12 @@
 
 .card:hover img {
   filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.5));
+}
+
+@media only screen and (min-width: 480px) {
+  .card {
+    box-shadow: 0 0.35rem 1.5rem 0 rgba(0, 0, 0, 0.37);
+  }
 }
 
 .cardTop {
@@ -37,6 +40,7 @@
 
 .cardImageCont img {
   max-height: 20rem;
+  min-height: 20rem;
   transition: filter 0.25s ease;
 }
 .cardTop p {

@@ -3,6 +3,17 @@ import { useBeerContext } from '../Context/beersContext';
 import styles from '../styles/Carousel.module.css';
 import BeerCard from './BeerCard';
 import { usePagination } from '../hooks/UsePagination';
+// Swiper
+// import Swiper core and required modules
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 const PER_PAGE = 4;
 
@@ -68,31 +79,41 @@ const Carousel = () => {
           currentItems.length < PER_PAGE ? styles.carouselNarrow : ''
         }`}
       >
-        {displayButtons.prev && (
-          <button
-            type="button"
-            title="Previous"
-            className={styles.chevronPrev}
-            onClick={prevPage}
-          ></button>
-        )}
-        {currentItems.map((item, idx) => (
-          <BeerCard
-            key={idx}
-            name={item.name}
-            image={item.image_url}
-            description={item.description}
-            id={item.id}
-          />
-        ))}
-        {displayButtons.next && (
-          <button
-            type="button"
-            title="Next"
-            className={styles.chevronNext}
-            onClick={nextPage}
-          ></button>
-        )}
+        <Swiper
+          navigation={true}
+          modules={[Navigation]}
+          className="mySwiper"
+          slidesPerView={4}
+          spaceBetween={30}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 40,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            800: {
+              slidesPerView: 3,
+            },
+            1120: {
+              slidesPerView: 4,
+            },
+          }}
+        >
+          {items.map((item, idx) => (
+            <SwiperSlide>
+              <BeerCard
+                key={idx}
+                name={item.name}
+                image={item.image_url}
+                description={item.description}
+                id={item.id}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
     </>
   );

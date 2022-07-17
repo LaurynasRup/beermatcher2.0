@@ -2,12 +2,7 @@
   width: 100%;
   max-width: 140rem;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 2rem;
-  padding-left: 7rem;
-  padding-right: 7rem;
-  position: relative;
+  padding: 1rem;
 }
 .carouselNarrow {
   justify-content: center;
